@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get '/new' => 'lists#new'
-  post 'lists' => 'lists#create'
-  get '/index' => 'lists#index'
-  get '/show' => 'lists#show'
-  get '/edit' => 'lists#edit'
+  get 'lists/new'
+  get 'lists/edit'
   get '/top' => 'homes#top'
+  post 'lists' => 'lists#create'
+  get 'lists' => 'lists#index'
+  #.../lists/1や.../list/3に該当する
+  get 'lists/:id' => 'lists#show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
