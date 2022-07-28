@@ -5,6 +5,6 @@ Rails.application.routes.draw do
   post 'lists' => 'lists#create'
   get 'lists' => 'lists#index'
   #.../lists/1や.../list/3に該当する
-  get 'lists/:id' => 'lists#show'
+  get 'lists/:id' => 'lists#show',as: 'list'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
