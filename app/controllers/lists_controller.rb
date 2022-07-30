@@ -37,6 +37,15 @@ class ListsController < ApplicationController
     redirect_to '/lists'
   end
 
+  def create
+    @list = List.new(list_params)
+    if @list.save
+      redirect_to list_path(@list.id)
+    else
+      render :new
+    end
+  end
+
   private
   #ストロングパラメータ
   def list_params
